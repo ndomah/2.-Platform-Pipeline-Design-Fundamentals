@@ -118,6 +118,60 @@ This table acts as a bridge (junction table) between `Invoice` and `stock_code`,
 
 ![key value stores](https://github.com/ndomah/2.-Platform-Pipeline-Design-Fundamentals/blob/main/4.%20Data%20Modeling%201/img/fig3%20-%20key%20value%20stores.png)
 
+**Key Section:**
+- The key used in this example is a composite key: `CustomerID_Invoice_No`
+- This key combines the customer ID and invoice number to uniquely identify each invoice entry.
+- **Considerations:**
+  - **Partial Key Scans:** A challenge in key-value stores is whether it's possible to query by part of the key (e.g., searching by CustomerID alone without knowing the Invoice_No).
+  - **Missing Key Components:** If part of the key is missing, retrieving data can become complex unless indexed appropriately.
+    
+**Value Section:**
+- The value associated with the key includes multiple attributes such as:
+  - `StockCode`
+  - `Description`
+  - `Quantity`
+  - `Price`
+  - `Invoice Date`
+  - `Country`
+- In a key-value store, all these attributes are typically stored as a single value (e.g., JSON or a serialized object).
+- **Challenges:**
+  - **Sorting Issues:** Since the `Invoice Date` is stored inside the value, it is difficult to sort or filter by date efficiently without retrieving the entire value first.
+  - **Handling Multiple Items:** A single invoice can contain multiple items, raising questions about how to model and retrieve such data efficiently.
+ 
+Key-value stores provide a fast and scalable solution for simple lookups using a unique identifier. However, challenges arise when partial lookups, sorting, or complex queries are required, making them best suited for scenarios where access patterns are predictable and simple.
 
+## Data Warehousing
 
-## Data Warehouses
+A **data warehouse** is a centralized repository that integrates data from various sources to support business intelligence and analytics. The diagram you provided represents a star schema, which is a commonly used modeling approach in data warehousing.
+
+![data warehousing](https://github.com/ndomah/2.-Platform-Pipeline-Design-Fundamentals/blob/main/4.%20Data%20Modeling%201/img/fig4%20-%20data%20warehousing.png)
+
+**Fact Table (Central Table)**
+- Named as `FACT` in the diagram.
+- Contains foreign keys (`FK`) to link with dimension tables.
+- Stores quantitative data such as:
+  - `FK CustomerID` (reference to the customer dimension)
+  - `FK InvoiceNo` (reference to the invoice dimension)
+  - `FK StockCode` (reference to the items dimension)
+  - `Item Price` (price of an individual item)
+  - `(Total price)` (aggregated cost calculation)
+
+The fact table captures transactional data and numerical values used for analysis (e.g., sales revenue, total items sold).
+
+**Dimension Tables (Descriptive Context)**
+- The dimension tables provide descriptive attributes related to the business entities involved in transactions. Each has a **Primary Key (PK)** and links to the fact table via foreign keys.
+  - **Customer Dimension (`DIM Customer`)**
+    - Contains `CustomerID` as the primary key.
+    - Stores attributes like customer name, location, and demographics.
+  - **Invoice Dimension (`DIM Invoice`)**
+    - Contains `InvoiceNo` as the primary key.
+    - Holds attributes like invoice date, billing address, and payment terms.
+  - **Items Dimension (`DIM Items`)**
+    - Contains `StockCode` as the primary key.
+    - Provides item-specific details such as description, category, and supplier.
+
+**Benefits of Using a Data Warehouse:**
+  - **Improved Query Performance:** The star schema structure allows for fast analytical queries by pre-aggregating data.
+  - **Historical Analysis:** The warehouse enables tracking of historical performance by storing data over time.
+  - **Business Intelligence (BI):** Supports reporting and dashboarding tools to analyze sales trends, customer behavior, and inventory.
+  - **Data Consistency:** Ensures a unified view of data across the business by integrating multiple data sources.
