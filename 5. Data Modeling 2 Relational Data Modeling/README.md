@@ -33,7 +33,7 @@ services:
 - Pull the [Official MySQL Docker Image](https://hub.docker.com/_/mysql/): `docker pull mysql`
 - Run: `docker-compose up -d`
 
-![fig1 - docker setup]()
+![fig1 - docker setup](https://github.com/ndomah/2.-Platform-Pipeline-Design-Fundamentals/blob/main/5.%20Data%20Modeling%202%20Relational%20Data%20Modeling/img/fig1%20-%20docker%20setup.png)
 
 - Launch MySQL Workbench and edit the configurations in the connection based on the contents of the yaml file, then test the connection
 - Upon connecting, the sales database (`salesdb`) will have been created
@@ -42,12 +42,12 @@ services:
 USE salesdb;
 ```
 
-![fig2 - workbench]()
+![fig2 - workbench](https://github.com/ndomah/2.-Platform-Pipeline-Design-Fundamentals/blob/main/5.%20Data%20Modeling%202%20Relational%20Data%20Modeling/img/fig2%20-%20workbench.png)
 
 ## Create the Conceptual Data Model
 ### Design Process
 
-![fig3 - design process]()
+![fig3 - design process](https://github.com/ndomah/2.-Platform-Pipeline-Design-Fundamentals/blob/main/5.%20Data%20Modeling%202%20Relational%20Data%20Modeling/img/fig3%20-%20design%20process.png)
 
 ### Discover the Entities and Attributes
 
@@ -94,14 +94,14 @@ The sales application must keep track of the following:
 - The **sales channel** through which the sales was made
 - Order **fulfillment activities**
 
-![fig4 - entities and attributes]()
+![fig4 - entities and attributes](https://github.com/ndomah/2.-Platform-Pipeline-Design-Fundamentals/blob/main/5.%20Data%20Modeling%202%20Relational%20Data%20Modeling/img/fig4%20-%20entities%20and%20attributes.png)
 
-![fig5 - combined]()
+![fig5 - combined](https://github.com/ndomah/2.-Platform-Pipeline-Design-Fundamentals/blob/main/5.%20Data%20Modeling%202%20Relational%20Data%20Modeling/img/fig5%20-%20combined.png)
 
 ### Define Relationships
 - Place entities and attributes on a matrix:
 
-![fig6 - matrix]()
+![fig6 - matrix](https://github.com/ndomah/2.-Platform-Pipeline-Design-Fundamentals/blob/main/5.%20Data%20Modeling%202%20Relational%20Data%20Modeling/img/fig6%20-%20matrix.png)
 
 - Track **cardinality** and **optionality**:
 
@@ -112,11 +112,11 @@ The sales application must keep track of the following:
 |**Optionality**|Can an Entity A exist without an entity B?|||
 ||Can an Entity B exist without an Entity A?|||
 
-![fig7 - c & o]()
+![fig7 - c & o](https://github.com/ndomah/2.-Platform-Pipeline-Design-Fundamentals/blob/main/5.%20Data%20Modeling%202%20Relational%20Data%20Modeling/img/fig7%20-%20c%20%26%20a.png)
 
 - Create a relational conceptual model:
 
-![fig8 - assertion model]()
+![fig8 - assertion model](https://github.com/ndomah/2.-Platform-Pipeline-Design-Fundamentals/blob/main/5.%20Data%20Modeling%202%20Relational%20Data%20Modeling/img/fig8%20%20-%20assertion%20model.png)
 
 - **Optionality** says what can and must happen in a relationship:
   - 0: Can (optional)
@@ -135,41 +135,41 @@ The sales application must keep track of the following:
 
 #### 1NF: The *Key*
 
-![fig9 - 1nfa]()
+![fig9 - 1nfa](https://github.com/ndomah/2.-Platform-Pipeline-Design-Fundamentals/blob/main/5.%20Data%20Modeling%202%20Relational%20Data%20Modeling/img/fig9%20-%201nfa.png)
 
-![fig10- 1nfb]()
+![fig10- 1nfb](https://github.com/ndomah/2.-Platform-Pipeline-Design-Fundamentals/blob/main/5.%20Data%20Modeling%202%20Relational%20Data%20Modeling/img/fig10%20-%201nfb.png)
 
 #### 2NF: The *Whole* Key
 
-![fig11 - 2nfa]()
+![fig11 - 2nfa](https://github.com/ndomah/2.-Platform-Pipeline-Design-Fundamentals/blob/main/5.%20Data%20Modeling%202%20Relational%20Data%20Modeling/img/fig11%20-%202nfa.png)
 
-![fig12 - 2nfb]()
+![fig12 - 2nfb](https://github.com/ndomah/2.-Platform-Pipeline-Design-Fundamentals/blob/main/5.%20Data%20Modeling%202%20Relational%20Data%20Modeling/img/fig12%20-%202nfb.png)
 
 #### 3NF: And *Nothing* But the Key
 
-![fig13 - 3nfa]()
+![fig13 - 3nfa](https://github.com/ndomah/2.-Platform-Pipeline-Design-Fundamentals/blob/main/5.%20Data%20Modeling%202%20Relational%20Data%20Modeling/img/fig13%20-%203nfa.png)
 
-![fig14 - 3nfb]()
+![fig14 - 3nfb](https://github.com/ndomah/2.-Platform-Pipeline-Design-Fundamentals/blob/main/5.%20Data%20Modeling%202%20Relational%20Data%20Modeling/img/fig14%20-%203nfb.png)
 
 ## Defining and Resolving Relationships
 
 ### One-to-One
 
-![fig15 - 1:1 before]()
+![fig15 - 1:1 before](https://github.com/ndomah/2.-Platform-Pipeline-Design-Fundamentals/blob/main/5.%20Data%20Modeling%202%20Relational%20Data%20Modeling/img/fig15%20-%201-1%20before.png)
 
-![fig16 - 1:1 after]()
+![fig16 - 1:1 after](https://github.com/ndomah/2.-Platform-Pipeline-Design-Fundamentals/blob/main/5.%20Data%20Modeling%202%20Relational%20Data%20Modeling/img/fig16%20-%201-1%20after.png)
 
 ### One-to-Many
 
-![fig17 - 1:N before]()
+![fig17 - 1:N before](https://github.com/ndomah/2.-Platform-Pipeline-Design-Fundamentals/blob/main/5.%20Data%20Modeling%202%20Relational%20Data%20Modeling/img/fig17%20-%201-n%20before.png)
 
-![fig18 - 1:N after]()
+![fig18 - 1:N after](https://github.com/ndomah/2.-Platform-Pipeline-Design-Fundamentals/blob/main/5.%20Data%20Modeling%202%20Relational%20Data%20Modeling/img/fig18%20-%201-n%20after.png)
 
 ### Many-to-Many
 
-![fig19 - N:N before]()
+![fig19 - N:N before](https://github.com/ndomah/2.-Platform-Pipeline-Design-Fundamentals/blob/main/5.%20Data%20Modeling%202%20Relational%20Data%20Modeling/img/fig19%20-%20n-n%20before.png)
 
-![fig20 - N:N after]()
+![fig20 - N:N after](https://github.com/ndomah/2.-Platform-Pipeline-Design-Fundamentals/blob/main/5.%20Data%20Modeling%202%20Relational%20Data%20Modeling/img/fig20%20-%20n-n%20after.png)
 
 ## Creating the Database
 
@@ -184,11 +184,11 @@ The sales application must keep track of the following:
     - Index columns used in `GROUP BY` 
 - Create the ER diagrams
 
-![fig22 - erd drawio]()
+![fig22 - erd drawio](https://github.com/ndomah/2.-Platform-Pipeline-Design-Fundamentals/blob/main/5.%20Data%20Modeling%202%20Relational%20Data%20Modeling/img/fig22%20-%20erd%20drawio.png)
 
-![fig21 - erd mysql]()
+![fig21 - erd mysql](https://github.com/ndomah/2.-Platform-Pipeline-Design-Fundamentals/blob/main/5.%20Data%20Modeling%202%20Relational%20Data%20Modeling/img/fig21%20-%20erd.png)
 
-- Right click on the tables on the ERD in MySQL Workbench to run the code and setup the database ([create_sales_tables_mysqldb_script.sql]()):
+- Right click on the tables on the ERD in MySQL Workbench to run the code and setup the database ([create_sales_tables_mysqldb_script.sql](https://github.com/ndomah/2.-Platform-Pipeline-Design-Fundamentals/blob/main/5.%20Data%20Modeling%202%20Relational%20Data%20Modeling/assets_scripts/oltp/create_sales_tables_mysqldb_script.sql)):
 ```mysql
 -- MySQL Workbench Forward Engineering
 
@@ -360,9 +360,9 @@ SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
 ### Populate the MySQL DB with Data from a .xls File
 - Review the data flow:
 
-![fig23 - data flow]()
+![fig23 - data flow](https://github.com/ndomah/2.-Platform-Pipeline-Design-Fundamentals/blob/main/5.%20Data%20Modeling%202%20Relational%20Data%20Modeling/img/fig23%20-%20data%20flow.jpg)
 
-- Using the [US_Regional_Sales_Data]() excel file, we write [etl_salesdb_oltp.py]():
+- Using the [US_Regional_Sales_Data]() excel file, we write [etl_salesdb_oltp.py](https://github.com/ndomah/2.-Platform-Pipeline-Design-Fundamentals/blob/main/5.%20Data%20Modeling%202%20Relational%20Data%20Modeling/assets_scripts/oltp/etl_salesdb_oltp.py):
 ```python
 # Import libraries
 import pandas as pd 
