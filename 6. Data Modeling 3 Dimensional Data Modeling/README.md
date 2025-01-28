@@ -5,7 +5,7 @@
 
 ## Dimensional Modeling (Kimball): Architecture
 
-![fig1 - dwi layers]()
+![fig1 - dwi layers](https://github.com/ndomah/2.-Platform-Pipeline-Design-Fundamentals/blob/main/6.%20Data%20Modeling%203%20Dimensional%20Data%20Modeling/img/fig1%20-%20dwi%20layers.png)
 
 **Staging (ETL systems)**:
 1. Transform from source-to-target
@@ -24,7 +24,7 @@
 
 ## ER Modeling (Inmon): Architecture
 
-![fig2 - cif]()
+![fig2 - cif](https://github.com/ndomah/2.-Platform-Pipeline-Design-Fundamentals/blob/main/6.%20Data%20Modeling%203%20Dimensional%20Data%20Modeling/img/fig2%20-%20cif.png)
 
 **Operational**:
 1. Detailed
@@ -48,7 +48,7 @@
 ## Dimensional Modeling Basics
 ### Approaches to Data Warehouses
 
-![fig3 - plot]()
+![fig3 - plot](https://github.com/ndomah/2.-Platform-Pipeline-Design-Fundamentals/blob/main/6.%20Data%20Modeling%203%20Dimensional%20Data%20Modeling/img/fig3%20-%20plot.png)
 
 **Data-Driven Approach**:
 - Adopted by IT-led teams avoiding early user involvement
@@ -61,30 +61,30 @@
 
 ### Dimensional Modeling (Kimball): Design Process
 
-![fig4 - kimball lifecycle]()
+![fig4 - kimball lifecycle](https://github.com/ndomah/2.-Platform-Pipeline-Design-Fundamentals/blob/main/6.%20Data%20Modeling%203%20Dimensional%20Data%20Modeling/img/fig4%20-%20kimball%20lifecycle.png)
 
 ### Dimension Tables Explained
 A dimension table is a table in a database that stores descriptive attributes, often text values, that provide context to the data in a fact table.
 
 #### Slowly Changing Dimensions (SCD): Type 0, 1, 2, and 3
 
-![fig5 - scd table]()
+![fig5 - scd table](https://github.com/ndomah/2.-Platform-Pipeline-Design-Fundamentals/blob/main/6.%20Data%20Modeling%203%20Dimensional%20Data%20Modeling/img/fig5%20-%20scd%20table.png)
 
 ***SCD Type 0 Example**
 
-![fig6 - type 0]()
+![fig6 - type 0](https://github.com/ndomah/2.-Platform-Pipeline-Design-Fundamentals/blob/main/6.%20Data%20Modeling%203%20Dimensional%20Data%20Modeling/img/fig6%20-%20type%200.png)
 
 ***SCD Type 1 Example**
 
-![fig7 - type 1]()
+![fig7 - type 1](https://github.com/ndomah/2.-Platform-Pipeline-Design-Fundamentals/blob/main/6.%20Data%20Modeling%203%20Dimensional%20Data%20Modeling/img/fig7%20-%20type%201.png)
 
 ***SCD Type 2 Example**
 
-![fig8 - type 2]()
+![fig8 - type 2](https://github.com/ndomah/2.-Platform-Pipeline-Design-Fundamentals/blob/main/6.%20Data%20Modeling%203%20Dimensional%20Data%20Modeling/img/fig8%20-%20type%202.png)
 
 ***SCD Type 3 Example**
 
-![fig9 - type 3]()
+![fig9 - type 3](https://github.com/ndomah/2.-Platform-Pipeline-Design-Fundamentals/blob/main/6.%20Data%20Modeling%203%20Dimensional%20Data%20Modeling/img/fig9%20-%20type%203.png)
 
 ### Fact Tables Explained
 
@@ -100,15 +100,15 @@ A dimension table is a table in a database that stores descriptive attributes, o
 
 #### Types of Measures in Facts
 
-![fig10 - additive]()
+![fig10 - additive](https://github.com/ndomah/2.-Platform-Pipeline-Design-Fundamentals/blob/main/6.%20Data%20Modeling%203%20Dimensional%20Data%20Modeling/img/fig10%20-%20additive.png)
 
 **Additive** facts are facts that can be summed up/aggregated through all of the dimensions in the fact table.
 
-![fig11 - semiadditive]()
+![fig11 - semiadditive](https://github.com/ndomah/2.-Platform-Pipeline-Design-Fundamentals/blob/main/6.%20Data%20Modeling%203%20Dimensional%20Data%20Modeling/img/fig11%20-%20semiadditive.png)
 
 **Semi-Additive** facts are facts that can be summed up/aggregated for some of the dimensions in the fact table but not the others.
 
-![fig12 - nonadditive]()
+![fig12 - nonadditive](https://github.com/ndomah/2.-Platform-Pipeline-Design-Fundamentals/blob/main/6.%20Data%20Modeling%203%20Dimensional%20Data%20Modeling/img/fig12%20-%20nonadditive.png)
 
 **Non-Additive** facts are facts that cannot be summed up/aggregated for any of the dimensions. 
 
@@ -119,10 +119,10 @@ A dimension table is a table in a database that stores descriptive attributes, o
 - Create conda environment: `conda env create -f modelingenv.yml`
 - Verify environment was created: `conda info --envs`
 - Cleanup downloaded libraries: `conda clean -tp`
-- Run `jupyter notebook` and open [`duckdb_practical_exercise.ipynb`]()
+- Run `jupyter notebook` and open [`duckdb_practical_exercise.ipynb`](https://github.com/ndomah/2.-Platform-Pipeline-Design-Fundamentals/blob/main/6.%20Data%20Modeling%203%20Dimensional%20Data%20Modeling/assets_scripts/olap/duckdb_practical_excercise.ipynb)
 
 ### Creating Tables in DuckDB
-- Run [`create_tables_salesdb_olap.py`] to create the tables
+- Run [`create_tables_salesdb_olap.py`](https://github.com/ndomah/2.-Platform-Pipeline-Design-Fundamentals/blob/main/6.%20Data%20Modeling%203%20Dimensional%20Data%20Modeling/assets_scripts/olap/create_tables_salesdb_olap.py) to create the tables
 
 ```python
 #importing libraries
@@ -143,7 +143,7 @@ if __name__ == "__main__":
     main()
 ```
 
-- This script imports `create_table_queries` from [`sql_quries_salesdb_olap.py`]()
+- This script imports `create_table_queries` from [`sql_queries_salesdb_olap.py`](https://github.com/ndomah/2.-Platform-Pipeline-Design-Fundamentals/blob/main/6.%20Data%20Modeling%203%20Dimensional%20Data%20Modeling/assets_scripts/olap/sql_queries_salesdb_olap.py)
 
 ```python
 
@@ -240,7 +240,7 @@ create_table_queries = [create_stores, create_employees_seq, create_employees_sc
 ## Working with the Data Warehouse
 
 ### Exploring SCD0 and SCD1
-- Refer to [`etl_salesdb_olap_all_but_scd2.py`]()
+- Refer to [`etl_salesdb_olap_all_but_scd2.py`](https://github.com/ndomah/2.-Platform-Pipeline-Design-Fundamentals/blob/main/6.%20Data%20Modeling%203%20Dimensional%20Data%20Modeling/assets_scripts/olap/etl_salesdb_olap_all_but_scd2.py)
 ```python
 import pandas as pd
 import MySQLdb
@@ -478,7 +478,7 @@ if __name__ == '__main__':
 ```
 
 ### Exploring SCD2
-- Refer to [`etl_salesdb_olap_scd2_initial_load.py`]()
+- Refer to [`etl_salesdb_olap_scd2_initial_load.py`](https://github.com/ndomah/2.-Platform-Pipeline-Design-Fundamentals/blob/main/6.%20Data%20Modeling%203%20Dimensional%20Data%20Modeling/assets_scripts/olap/etl_salesdb_olap_scd2_initial_load.py)
 ```python
 import pandas as pd
 import MySQLdb
@@ -524,7 +524,7 @@ if __name__ == '__main__':
     main()
 ```
 
-- Refer to [`etl_salesdb_olap_scd2_ongoing.py`]()
+- Refer to [`etl_salesdb_olap_scd2_ongoing.py`](https://github.com/ndomah/2.-Platform-Pipeline-Design-Fundamentals/blob/main/6.%20Data%20Modeling%203%20Dimensional%20Data%20Modeling/assets_scripts/olap/etl_salesdb_olap_scd2_ongoing.py)
 ```python
 import pandas as pd
 import MySQLdb
