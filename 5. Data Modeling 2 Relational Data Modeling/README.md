@@ -7,6 +7,7 @@ From DAMA International:
 - Each model contains *a set of components*. Some examples of components are entities, relationships, facts, keys, and attributes.
  
 ## Data Modeling Schemas
+
 |**Schema**|**Sample Notations**|
 |---:|:---|
 |Relational|Baker Notation, Chen|
@@ -71,7 +72,7 @@ Review the following:
 - Entities can be derived from answering:
 
 |**Question**|**Definition**|
-|---:||
+|---:|---|
 |**Who?**|...is important to the business?|
 |**What?**|...does the organization make?/...service does it provide?|
 |**When?**|...is the business in operation?|
