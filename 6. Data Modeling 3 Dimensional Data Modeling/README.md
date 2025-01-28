@@ -139,7 +139,7 @@ def main():
     create_tables(dest)
 
 if __name__ == "__main__":
-    destDatabase = duckdb.connect(r'C:\Users\niles\OneDrive\Desktop\assets_scripts\salesdwh.duckdb') # Change the path if you have your sales duckDB somewhere else
+    destDatabase = duckdb.connect(r'C:\Users\niles\OneDrive\Desktop\assets_scripts\salesdwh.duckdb')
     main()
 ```
 
@@ -236,3 +236,18 @@ create_sales_acc=('''CREATE TABLE IF NOT EXISTS fact_sales_acc (
 
 create_table_queries = [create_stores, create_employees_seq, create_employees_scd2, create_employees_scd1, create_customers, create_products, create_channels, create_sales_scd2, create_sales_scd1, create_sales_acc]
 ```
+
+## Working with the Data Warehouse
+
+### Exploring SCD0 and SCD1
+
+
+### Exploring SCD2
+
+
+### Exploring Transaction Fact Table
+
+
+### Exploring Accumulating Fact Table
+
+
